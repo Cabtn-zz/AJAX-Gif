@@ -51,10 +51,8 @@ function displayGifs() {
       //This is what stops and starts gifs
       	$(".play").on("click", function(event) {
           if (toggle === false){
-          console.log(this);
           var c = $(this).attr('data-animated');
           $(this).attr("src", c);
-          console.log("play");
           toggle = true;
           }
           //Use the animate function to change from img to gif
