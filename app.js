@@ -51,14 +51,14 @@ function displayGifs() {
       //This is what stops and starts gifs
       	$(".play").on("click", function(event) {
           if (toggle === false){
-          var c = $(this).attr('data-animated');
-          $(this).attr("src", c);
+          var animate = $(this).attr('data-animated');
+          $(this).attr("src", animate);
           toggle = true;
           }
           //Use the animate function to change from img to gif
           else {
-          var d = $(this).attr("data-still");
-          $(this).attr("src", d);
+          var still = $(this).attr("data-still");
+          $(this).attr("src", still);
           toggle = false;
           }
         });
