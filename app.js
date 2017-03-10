@@ -1,4 +1,4 @@
-var topics = ["Games", "Robots", "Space", "Movies", "Books", "SciFi"];
+var topics = ["Games", "Robots", "Space", "Movies", "Books", "SciFi", "Hearthstone", "GWENT", "Artificial Intelligence"];
 var gifURL;
 var imgURL;
 var image; 
