@@ -2,14 +2,18 @@
 <html>
 <head>
 	<title>Test</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
- <form id="search-form">
-      <label for="searchgifs">Search for gifs</label>
+<div class="jumbotron">
+	<h2 class="text-center">Gifs of Topics That Abtin Likes</h2>
+</div>
+ 	<form id="search-form">
+      <label for="searchgifs">Add gifs to your library</label>
       <input type="text" id="search-input"><br>
 
       <!-- This button will trigger our AJAX call -->
-      <input id="search" type="submit" value="Gif Search">
+      <input id="search" type="submit" value="Add To Library" class="btn btn-primary">
     </form>
 <br>
 <div id="buttons-view"></div>
@@ -21,3 +25,10 @@
 
  </body>
 </html>
+
+<style>
+.btn {
+margin: 10px;
+}
+
+</style>

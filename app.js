@@ -15,6 +15,7 @@ function renderButtons() {
     var a = $("<button>");
     // Adds a class of movie to our button
     a.addClass("topic");
+    a.addClass("btn btn-primary")
     // Added a data-attribute
     a.attr("data-name", topics[i]);
     // Provided the initial button text
@@ -35,11 +36,12 @@ function displayGifs() {
 			url: queryURL,   
 			method: "GET",
 		}).done(function(response){
+      console.log(response)
       //This gets the first 10 gifs from the search
 			for (var i = 0; i < 10; i ++){
 				
-				gifURL = response.data[i].images.original.url;
-        imgURL = response.data[i].images.original_still.url;
+				gifURL = response.data[i].images.fixed_height.url;
+        imgURL = response.data[i].images.fixed_height_still.url;
         var b =$("<img>");
         b.attr('data-animated', gifURL);
         b.attr('data-still', imgURL);
@@ -68,9 +70,13 @@ function displayGifs() {
 $("#search").on("click", function(event) {
     event.preventDefault();
     newTerm = $("#search-input").val();
+    var notDuplicate = $.inArray(newTerm, topics) === -1 && newTerm !== "";
+    //This makes it so you can't repeat the same term or add an empty button
+    if (notDuplicate === true){
     console.log(newTerm);
     topics.push(newTerm);
     renderButtons();
+    }
 });
 
 $(document).on("click", ".topic", displayGifs);
